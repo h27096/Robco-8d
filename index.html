@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071109"><meta name="description" content="Convert your own audio into moving 8D sound on your device.">
+<title>RobCo 8D — Audio Workstation</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">[R]</span><span>ROBCO 8D<span class="brand-sub">INDUSTRIES AUDIO WORKSTATION</span></span></div><button class="header-load" id="headerLoad">LOAD AUDIO</button></header>
+<main>
+<section class="workspace" aria-label="Audio studio">
+<div class="player-panel">
+<div class="disc-stage"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="disc" id="disc"><div class="disc-center"></div></div><span class="orbit-dot" id="orbitDot"></span></div>
+<div class="track-info"><p class="eyebrow">AUDIO TRANSPORT // 01</p><h1 id="trackName">AWAITING AUDIO INPUT</h1><p id="trackDetail">Load a track to initialize playback</p></div>
+<div class="timeline"><span id="currentTime">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek through song" disabled><span id="duration">0:00</span></div>
+<div class="playback"><button id="previous" class="icon-button" aria-label="Previous track" disabled>⏮</button><button id="play" class="play-button" aria-label="Play" disabled>▶</button><button id="next" class="icon-button" aria-label="Next track" disabled>⏭</button></div>
+<div class="headphone-note">🎧 &nbsp; Use headphones to hear the orbit effect</div>
+</div>
+<div class="control-panel">
+<div class="panel-head"><div><p class="eyebrow">SIGNAL PROCESSOR // 02</p><h2>8D CONTROL PANEL</h2></div><label class="upload-button">+ LOAD FILE<input id="fileInput" type="file" accept="audio/*,.mp3,.m4a,.aac,.wav,.flac,.ogg" multiple></label></div>
+<div class="dropzone" id="dropzone"><strong>INSERT AUDIO FILE</strong><span>Drop a file here or select LOAD FILE</span></div>
+<div class="presets" role="group" aria-label="Effect presets"><button class="preset active" data-preset="classic">Classic 8D</button><button class="preset" data-preset="slow">Slow Orbit</button><button class="preset" data-preset="deep">Deep 8D</button><button class="preset" data-preset="fast">Fast Orbit</button></div>
+<div class="controls"><div class="control"><div class="control-label"><label for="speed">Rotation speed</label><output id="speedValue">8 sec</output></div><input id="speed" type="range" min="2" max="20" step="1" value="8"></div>
+<div class="control"><div class="control-label"><label for="intensity">Intensity</label><output id="intensityValue">80%</output></div><input id="intensity" type="range" min="0" max="100" step="1" value="80"></div>
+<div class="control"><div class="control-label"><label for="reverb">Echo</label><output id="reverbValue">18%</output></div><input id="reverb" type="range" min="0" max="50" step="1" value="18"></div>
+<div class="control"><div class="control-label"><label for="bass">Bass</label><output id="bassValue">20%</output></div><input id="bass" type="range" min="0" max="100" step="1" value="20"></div>
+<div class="control direction"><span>Direction</span><div class="segmented" role="group" aria-label="Orbit direction"><button id="clockwise" class="selected" aria-pressed="true">↻ Clockwise</button><button id="counterclockwise" aria-pressed="false">↺ Reverse</button></div></div></div>
+<button id="export" class="export-button" disabled>Export 8D audio <span>↗</span></button><p id="status" class="status" role="status" aria-live="polite">Import an audio file to preview and export.</p>
+</div></section>
+<section class="library" aria-label="Session library"><div class="library-heading"><h2>LOADED HOLOTAPES</h2><span id="trackCount">0 tracks</span></div><div id="trackList" class="track-list"><p class="empty">NO HOLOTAPES LOADED. Files remain available for this session.</p></div></section>
+</main><footer>ROBCO INDUSTRIES // PERSONAL AUDIO TERMINAL<br>Local audio processing. No file uploads. Unofficial fan project.</footer>
+</div><script src="app.js" defer></script>
+</body></html>
